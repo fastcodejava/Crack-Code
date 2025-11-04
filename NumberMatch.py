@@ -10,16 +10,18 @@ class NumberMatch:
       - numCorrect: how many guessed values appear anywhere in the secret
       - numPositionCorrect: how many guessed values are correct and in the correct position
     """
-    numbers: List[int] = field(default_factory=list)
+    number: int
     numCorrect: int = 0
     numPositionCorrect: int = 0
+    numbers: List[int] = field(default_factory=list)
 
     def __post_init__(self):
         # ensure numbers is a list of ints
-        if isinstance(self.numbers, Iterable) and not isinstance(self.numbers, (str, bytes)):
-            self.numbers = [int(x) for x in self.numbers]
-        else:
-            raise TypeError("numbers must be an iterable of integers")
+        self.numbers = list(map(int, str(self.number)))
+        # if isinstance(self.numbers, Iterable) and not isinstance(self.numbers, (str, bytes)):
+        #     self.numbers = [int(x) for x in self.numbers]
+        # else:
+        #     raise TypeError("numbers must be an iterable of integers")
 
         # coerce counters to ints and basic validation
         self.numCorrect = int(self.numCorrect)

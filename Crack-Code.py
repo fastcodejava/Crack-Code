@@ -80,12 +80,9 @@ def validGuess(guess, hint):
     numCorrect = sum(min(hint_counts[val], guess_counts[val]) for val in guess_counts)
     return pos_correct == hint.numPositionCorrect and numCorrect == hint.numCorrect
 
-results = []
 count = 0
-for guess in itertools.permutations(numbers, 3):
-    count += 1
-    if all(validGuess(guess, hint) for hint in hints):
-        results.append(guess)
+guesses = itertools.permutations(numbers, 3)
+results = [guess for guess in guesses if all(validGuess(guess, hint) for hint in hints)]
 
 # print(count, results)
-print(results)
+print(results

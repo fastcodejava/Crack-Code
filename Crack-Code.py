@@ -33,12 +33,12 @@ numbers = [x for x in range(10)]
 # hint4 = NumberMatch("806", 1, 0)
 # hint5 = NumberMatch("647", 1, 0)
 
-# hint1 = NumberMatch(682, 1, 1)
-# hint2 = NumberMatch(614, 1, 0)
-# hint3 = NumberMatch(206, 2, 0)
-# hint4 = NumberMatch(780, 1, 0)
-# hint5 = NumberMatch(738, 0, 0)
-# hint6 = NumberMatch(780, 1, 0)
+hint1 = NumberMatch("682", 1, 1)
+hint2 = NumberMatch("614", 1, 0)
+hint3 = NumberMatch("206", 2, 0)
+hint4 = NumberMatch("780", 1, 0)
+hint5 = NumberMatch("738", 0, 0)
+hint6 = NumberMatch("780", 1, 0)
 
 # hint1 = NumberMatch("548", 1, 1)
 # hint2 = NumberMatch("350", 0, 0)
@@ -53,10 +53,10 @@ numbers = [x for x in range(10)]
 # hint5 = NumberMatch("573", 1, 0)
 # hint6 = NumberMatch("268", 1, 0)
 
-hint1 = NumberMatch("368", 1, 1)
-hint2 = NumberMatch("527", 0, 0)
-hint3 = NumberMatch("176", 1, 0)
-hint4 = NumberMatch("471", 2, 0)
+# hint1 = NumberMatch("368", 1, 1)
+# hint2 = NumberMatch("527", 0, 0)
+# hint3 = NumberMatch("176", 1, 0)
+# hint4 = NumberMatch("471", 2, 0)
 
 # hint1 = NumberMatch("3682", 1, 1)
 # hint2 = NumberMatch("5271", 0, 0)
@@ -66,26 +66,26 @@ hint4 = NumberMatch("471", 2, 0)
 
 # hints = [hint1, hint2, hint3, hint4, hint5, hint6]
 # hints = [NumberMatch(682, 1, 1), NumberMatch(614, 1, 0), NumberMatch(206, 2, 0), NumberMatch(780, 1, 0), NumberMatch(738, 0, 0), NumberMatch(780, 1, 0)]
-hints = [hint1, hint2, hint3, hint4]
-# hints = [hint1, hint2, hint3, hint4, hint5, hint6]
+# hints = [hint1, hint2, hint3, hint4]
+hints = [hint1, hint2, hint3, hint4, hint5, hint6]
 
 hintA = list(filter(lambda n: n.numCorrect == 0, hints))
 
 numbers = [x for x in numbers if x not in hintA[0].numbers]
 
+def validGuess(guess, hint):
+    pos_correct = sum(1 for g, s in zip(guess, hint.numbers) if g == s)
+    hint_counts = Counter(hint.numbers)
+    guess_counts = Counter(guess)
+    numCorrect = sum(min(hint_counts[val], guess_counts[val]) for val in guess_counts)
+    return pos_correct == hint.numPositionCorrect and numCorrect == hint.numCorrect
+
 results = []
 count = 0
 for guess in itertools.permutations(numbers, 3):
     count += 1
-    for hint in hints:
-        pos_correct = sum(1 for g, s in zip(guess, hint.numbers) if g == s)
-        hint_counts = Counter(hint.numbers)
-        guess_counts = Counter(guess)
-        numCorrect = sum(min(hint_counts[val], guess_counts[val]) for val in guess_counts)
-        if pos_correct != hint.numPositionCorrect or numCorrect != hint.numCorrect:
-            break
-            # print(number)
-    else:
+    if all(validGuess(guess, hint) for hint in hints):
         results.append(guess)
+
 # print(count, results)
 print(results)

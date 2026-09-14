@@ -11,244 +11,17 @@ numbers = [x for x in range(10)]
 numDigits = 5
 # print(numbers)
 
-# hint1 = NumberMatch(281, 1, 1)
-# hint2 = NumberMatch(619, 1, 0)
-# hint3 = NumberMatch(348, 2, 0)
-# hint4 = NumberMatch(924, 1, 0)
-# hint5 = NumberMatch(731, 1, 0)
-# hint6 = NumberMatch(462, 0, 0)
-
-# hint1 = NumberMatch(612, 1, 1)
-# hint2 = NumberMatch(308, 0, 0)
-# hint3 = NumberMatch(792, 2, 2)
-# hint4 = NumberMatch(014, 1, 0)
-# hint5 = NumberMatch(874, 1, 0)
-
-# hint1 = NumberMatch(689, 1, 1)
-# hint2 = NumberMatch(104, 1, 0)
-# hint3 = NumberMatch(205, 2, 0)
-# hint4 = NumberMatch(738, 0, 0)
-# hint5 = NumberMatch(587, 1, 0)
-
-# hint1 = NumberMatch("548", 1, 1)
-# hint2 = NumberMatch("530", 0, 0)
-# hint3 = NumberMatch("157", 2, 0)
-# hint4 = NumberMatch("806", 1, 0)
-# hint5 = NumberMatch("647", 1, 0)
-
-# hint1 = NumberMatch("682", 1, 1)
-# hint2 = NumberMatch("614", 1, 0)
-# hint3 = NumberMatch("206", 2, 0)
-# hint4 = NumberMatch("780", 1, 0)
-# hint5 = NumberMatch("738", 0, 0)
-# hint6 = NumberMatch("780", 1, 0)
-
-# hint4 = NumberMatch("305", 2, 0)
-# hint2 = NumberMatch("712", 1, 0)
-# hint3 = NumberMatch("153", 2, 0)
-# hint1 = NumberMatch("247", 0, 0)
-# hint5 = NumberMatch("361", 2, 1)
-
-# hint4 = NumberMatch("435", 2, 0)
-# hint2 = NumberMatch("732", 1, 0)
-# hint3 = NumberMatch("853", 2, 0)
-# hint1 = NumberMatch("125", 0, 0)
-# hint5 = NumberMatch("318", 2, 1)
-
-# hint4 = NumberMatch("971", 2, 0)
-# hint2 = NumberMatch("375", 1, 0)
-# hint3 = NumberMatch("957", 2, 0)
-# hint1 = NumberMatch("860", 0, 0)
-# hint5 = NumberMatch("790", 2, 1)
-# hint6 = NumberMatch("219", 2, 1)
-
-# hint4 = NumberMatch("107", 2, 0)
-# hint3 = NumberMatch("195", 2, 0)
-# hint2 = NumberMatch("741", 1, 0)
-# hint1 = NumberMatch("248", 0, 0)
-# hint5 = NumberMatch("914", 2, 1)
-# hint6 = NumberMatch("051", 2, 1)
-
-# 0145
-# hints = (
-#         NumberMatch("89461", 3, 1),
-#         NumberMatch("12873", 2, 1),
-#         NumberMatch("07452", 3, 2),
-#         NumberMatch("20346", 2, 1),
-#         NumberMatch("34527", 2, 0)
-#         )
-# 01946
-# hints = (
-#         NumberMatch("01563", 3, 2),
-#         NumberMatch("83296", 2, 1),
-#         NumberMatch("12486", 3, 1),
-#         NumberMatch("06783", 2, 1),
-#         NumberMatch("74581", 2, 0)
-#         )
-# 75093
-# hints = (
-#         NumberMatch("", 3, 2),
-#         NumberMatch("", 2, 1),
-#         NumberMatch("", 3, 1),
-#         NumberMatch("", 2, 1),
-#         NumberMatch("", 2, 0)
-#         )
-
 # 87931
-hints = (
-        NumberMatch("12936", 3, 2),
-        NumberMatch("47523", 2, 1),
-        NumberMatch("09135", 3, 1),
-        NumberMatch("85207", 2, 1),
-        NumberMatch("45716", 2, 0)
-        )
-# 01589
-# hints = (
-#         NumberMatch("01973", 3, 2),
-#         NumberMatch("71245", 2, 1),
-#         NumberMatch("81254", 3, 1),
-#         NumberMatch("25369", 2, 1),
-#         NumberMatch("12406", 2, 0)
-#         )
-# 09173
-# 59418
-# 05126
-# 12467
-# [(6, 4, 1, 2, 7), (6, 4, 2, 1, 7)]
-# 0491
-# hints = (
-#         NumberMatch("9546", 2, 0),
-#         NumberMatch("0587", 1, 1),
-#         NumberMatch("2501", 2, 1),
-#         NumberMatch("8056", 1, 0),
-#         NumberMatch("4859", 2, 0)
-        # NumberMatch("45679", 3, 0)
-# )
-# 0217
-# hints = (
-#         NumberMatch("4016", 2, 1),
-#         NumberMatch("0389", 1, 1),
-#         NumberMatch("3512", 2, 1),
-#         NumberMatch("8046", 1, 0),
-#         NumberMatch("7059", 2, 0)
-#         )
-# 5149
-# hints = (
-#         NumberMatch("5301", 2, 1),
-#         NumberMatch("7389", 1, 1),
-#         NumberMatch("3169", 2, 1),
-#         NumberMatch("7528", 1, 0),
-#         NumberMatch("7895", 2, 0)
-#         )
-# 8704
-# hints = (
-#         NumberMatch("5401", 2, 1),
-#         NumberMatch("9736", 1, 1),
-#         NumberMatch("6834", 2, 1),
-#         NumberMatch("0351", 1, 0),
-#         NumberMatch("5481", 2, 0)
-#         )
-# 05173
-# hints = (
-#         NumberMatch("06129", 2, 2),
-#         NumberMatch("14872", 2, 1),
-#         NumberMatch("25983", 2, 2),
-#         NumberMatch("52648", 1, 0),
-#         NumberMatch("97048", 2, 0)
-#         # NumberMatch("45679", 3, 0)
-#         )
-# hints = (
-#         NumberMatch("92634", 2, 0),
-#         NumberMatch("57184", 2, 1),
-#         NumberMatch("07329", 2, 2),
-#         NumberMatch("45398", 1, 1),
-#         NumberMatch("19786", 2, 1)
-        # NumberMatch("45679", 3, 0)
-        # )
-# 0127
-# hints = (
-#         NumberMatch("9182", 2, 1),
-#         NumberMatch("3570", 2, 0),
-#         NumberMatch("8253", 1, 0),
-#         NumberMatch("3467", 1, 1),
-#         NumberMatch("4329", 1, 1)
-#         )
-# 97385
-# hints = (
-#         NumberMatch("57609", 3, 1),
-#         NumberMatch("24865", 2, 1),
-#         NumberMatch("49381", 3, 2),
-#         NumberMatch("17826", 2, 1),
-#         NumberMatch("30428", 2, 0)
-#         )
-# hints = (
-#         NumberMatch("50718", 0, 0),
-#         NumberMatch("10426", 3, 2),
-#         NumberMatch("94730", 3, 2),
-#         NumberMatch("02419", 3, 0)
-#         )
 
-# hint4 = NumberMatch("5410", 2, 0)
-# hint3 = NumberMatch("3675", 1, 0)
-# hint2 = NumberMatch("4587", 2, 1)
-# hint1 = NumberMatch("0592", 1, 0)
-# hint5 = NumberMatch("9034", 1, 1)
-
-# hint4 = NumberMatch("4293", 3, 0)
-# hint3 = NumberMatch("6734", 3, 2)
-# hint2 = NumberMatch("7916", 1, 0)
-# hint1 = NumberMatch("2817", 1, 1)
-
-# hint4 = NumberMatch("2170", 3, 1)
-# hint3 = NumberMatch("94861", 0, 0)
-# hint2 = NumberMatch("85096", 2, 1)
-# hint1 = NumberMatch("23956", 3, 3)
-
-# hint4 = NumberMatch("1807", 2, 0)
-# hint3 = NumberMatch("7469", 2, 0)
-# hint2 = NumberMatch("8247", 1, 1)
-# hint1 = NumberMatch("0973", 2, 2)
-
-# hint1 = NumberMatch("548", 1, 1)
-# hint2 = NumberMatch("350", 0, 0)
-# hint3 = NumberMatch("157", 2, 0)
-# hint4 = NumberMatch("806", 1, 0)
-# hint5 = NumberMatch("647", 1, 0)
-# 046
-# hint1 = NumberMatch("549", 1, 1)
-# hint2 = NumberMatch("350", 0, 0)
-# hint3 = NumberMatch("157", 2, 0)
-# hint4 = NumberMatch("806", 1, 0)
-# hint5 = NumberMatch("573", 1, 0)
-# hint6 = NumberMatch("268", 1, 0)
-
-# hint1 = NumberMatch("368", 1, 1)
-# hint2 = NumberMatch("527", 0, 0)
-# hint3 = NumberMatch("176", 1, 0)
-# hint4 = NumberMatch("471", 2, 0)
-
-# hint1 = NumberMatch("3682", 1, 1)
-# hint2 = NumberMatch("5271", 0, 0)
-# hint3 = NumberMatch("1768", 1, 0)
-# hint4 = NumberMatch("4710", 2, 0)
-
-
-# hints = [hint1, hint2, hint3, hint4, hint5, hint6]
-# hints = [NumberMatch(682, 1, 1), NumberMatch(614, 1, 0), NumberMatch(206, 2, 0), NumberMatch(780, 1, 0), NumberMatch(738, 0, 0), NumberMatch(780, 1, 0)]
-# hints = [hint1, hint2, hint3]
-# hints = [hint1, hint2, hint3, hint4]
-# hints = [hint1, hint2, hint3, hint4, hint5, hint6]
-# hints = [hint1, hint2, hint3, hint4, hint5]
-
-hintA = list(filter(lambda n: n.numCorrect == 0, hints))
+# hintA = list(filter(lambda n: n.numCorrect == 0, hints))
 # hintA = hintA if hintA is not None else []
-print(hintA)
+# print(hintA)
 
 # numbers = [x for x in numbers if len(hintA) > 0 and x not in hintA[0].numbers] if hintA is not None else numbers
 # print(numbers)
-if len(hintA) > 0:
+# if len(hintA) > 0:
     # numbers = [x for x in numbers if len(hintA) > 0 and x not in hintA[0].numbers]
-    numbers = [x for x in numbers if x not in hintA[0].numbers]
+    # numbers = [x for x in numbers if x not in hintA[0].numbers]
 # print(numbers)
 
 def validGuess(guess, hint):
@@ -486,7 +259,7 @@ def getClue(numberMatch: NumberMatch):
 # leng = 2
 results = []
 colors = ["blue", "green", "orange", "purple", "pink"]
-numb = "45721"
+numb = "89267"
 ind = random.choice([0, 1, 2, 3, 4])
 
 def createOutput(rows):
@@ -506,13 +279,6 @@ def createOutput(rows):
         d.rounded_rectangle((x, 730, x + 280, 1010), 30, fill='black', outline=(75, 220, 255), width=8)
         d.text((x + 140, 870), '?', font=F(154), fill='white', anchor='mm')
     d.text((1080, 1190), 'CLUES', font=F(104), fill=(255, 220, 40), anchor='mm')
-    # rows = [
-    #     ('93850', '2 digits are correct, 1 well placed', (80, 190, 255)),
-    #     ('03795', '3 digits are correct, 2 well placed', (80, 255, 130)),
-    #     ('62135', '3 digits are correct, 1 well placed', (255, 185, 70)),
-    #     ('26097', '2 digits are correct, 1 well placed', (190, 120, 255)),
-    #     ('48159', '2 digits are correct, both wrongly placed', (255, 90, 170)),
-    # ]
     for i, (code, txt, c) in enumerate(rows):
         y = 1305 + i * 380
         d.rounded_rectangle((90, y - 10, 2070, y + 300), 50, fill=(4, 4, 15), outline=c, width=7)

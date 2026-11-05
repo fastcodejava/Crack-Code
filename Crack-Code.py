@@ -209,23 +209,32 @@ def check_answer(answer, clues):
 
 def getClue(numberMatch: NumberMatch):
     if numberMatch.numCorrect == 3 and numberMatch.numPositionCorrect == 2:
-        return "3 digits are correct, 2 well placed"
+        # return "3 digits are correct, 2 well placed"
+        return ["3 digits are correct", "2 well placed"]
     if numberMatch.numCorrect == 3 and numberMatch.numPositionCorrect == 1:
-        return "3 digits are correct, 1 well placed"
+        # return "3 digits are correct, 1 well placed"
+        return ["3 digits are correct", "1 well placed"]
     if numberMatch.numCorrect == 3:
-        return "3 digits are correct, wrongly placed"
+        # return "3 digits are correct, wrongly placed"
+        return ["3 digits are correct", "All wrongly placed"]
     if numberMatch.numCorrect == 1 and numberMatch.numPositionCorrect == 1:
-        return "1 digit is correct, it is well placed"
+        # return "1 digit is correct, it is well placed"
+        return ["1 digit is correct", "It is well placed"]
     if numberMatch.numCorrect == 1 and numberMatch.numPositionCorrect == 1:
-        return "1 digit is correct, it is well placed"
+        # return "1 digit is correct, it is well placed"
+        return ["1 digit is correct", "It is well placed"]
     if numberMatch.numCorrect == 1:
-        return "1 digit is correct it is wrongly placed"
+        # return "1 digit is correct it is wrongly placed"
+        return ["1 digit is correct", "It is wrongly placed"]
     if numberMatch.numCorrect == 2 and numberMatch.numPositionCorrect == 2:
-        return "2 digits are correct, both are well placed"
+        # return "2 digits are correct, both are well placed"
+        return ["2 digits are correct", "Both well placed"]
     if numberMatch.numCorrect == 2 and numberMatch.numPositionCorrect == 1:
-        return "2 digits are correct, 1 well placed"
+        # return "2 digits are correct, 1 well placed"
+        return ["2 digits are correct", "1 well placed"]
     if numberMatch.numCorrect == 2:
-        return "2 digits are correct, both wrongly placed"
+        # return "2 digits are correct, both wrongly placed"
+        return ["2 digits are correct", "Both wrongly placed"]
 
 
 # clues1 = [
@@ -259,7 +268,7 @@ def getClue(numberMatch: NumberMatch):
 # leng = 2
 results = []
 colors = ["blue", "green", "orange", "purple", "pink"]
-numb = "89267"
+numb = "82543"
 ind = random.choice([0, 1, 2, 3, 4])
 
 def createOutput(rows):
@@ -288,16 +297,19 @@ def createOutput(rows):
             d.text((275 + j * 92, y + 120), z, font=F(114), fill=c, anchor='lm')
         d.line((965, y + 70, 965, y + 245), fill=c, width=6)
         d.rounded_rectangle((1005, y + 32, 1990, y + 280), 36, fill='black', outline=c, width=7)
-        words = txt.split()
+        # words = txt.split()
         a = 0
         s = 0
-        for k, z in enumerate(words):
-            if a + len(z) + (1 if a else 0) > len(txt) // 2:
-                s = k
-                break
-            a += len(z) + (1 if a else 0)
-        d.text((1035, y + 88), ' '.join(words[:s]), font=F(54), fill=c)
-        d.text((1035, y + 162), ' '.join(words[s:]), font=F(54), fill=c)
+        # for k, z in enumerate(words):
+        #     if a + len(z) + (1 if a else 0) > len(txt) // 2:
+        #         s = k
+        #         break
+        #     a += len(z) + (1 if a else 0)
+
+        for k, z in enumerate(txt):
+            d.text((1035, y + 88 + k*74), z, font=F(54), fill=c)
+            # d.text((1035, y + 162), z, font=F(54), fill=c)
+
     d.rounded_rectangle((165, 3365, 1995, 3605), 44, fill='black', outline=(75, 220, 255), width=7)
     d.text((1080, 3435), 'CAN YOU CRACK THE CODE?', font=F(64), fill=(255, 220, 40), anchor='mm')
     d.text((1080, 3520), 'Find the exact 5-digit code!', font=F(58), fill='white', anchor='mm')
@@ -373,8 +385,8 @@ while True:
         with open("output/output.txt", "a") as file:
                     # print("Create a " + str(numDigits) + " digit puzzle image like above with the following clues, keep the text within the boxes and same color as the numbers for each row:")
             for i, h in enumerate(hints):
-                print(h.number + " \"" + getClue(h) + "\"")
-                file.write(h.number + " " + getClue(h) + "\n")
+                print(h.number + " \"" + str(getClue(h)) + "\"")
+                file.write(h.number + " " + str(getClue(h)) + "\n")
                 rows.append((h.number, getClue(h), colors[i]))
             file.write(str(results[0]) + "\n")
             file.write("\n\n\n\n")
